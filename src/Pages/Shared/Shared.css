@@ -19,3 +19,9 @@
     color: #FBF9FA;
     transition: ease-in-out 0.3s;
 }
+
+.Signup-button:hover {
+    background-color: #FBF9FA;
+    color: #000;
+    border: 2px solid #FBF9FA;
+}
