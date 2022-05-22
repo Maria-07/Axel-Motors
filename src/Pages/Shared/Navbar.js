@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../../Assets/logo-01.png";
 import CustomLink from "./CustomeLink";
 import "./Shared.css";
 
@@ -7,7 +8,7 @@ const Navbar = () => {
   const navManuItems = (
     <>
       <li>
-        <CustomLink className="text-lg" to={"/"}>
+        <CustomLink className="text-lg " to={"/"}>
           Home
         </CustomLink>
       </li>
@@ -19,9 +20,9 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="bg-accent py-1">
+    <div className="bg-neutral ">
       <div className="sm:mx-10">
-        <div className="navbar text-white">
+        <div className="navbar text-accent">
           <div className="navbar-start">
             <div className="dropdown">
               <label tabindex="0" className="btn btn-ghost lg:hidden">
@@ -42,22 +43,24 @@ const Navbar = () => {
               </label>
               <ul
                 tabindex="0"
-                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-accent rounded-box w-52"
+                className="menu menu-compact dropdown-content mt-3 bg-neutral p-2 shadow  w-52"
               >
                 {navManuItems}
               </ul>
             </div>
-            <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+            <Link to={"/"}>
+              <img src={logo} className="lg:h-10" alt="" />
+            </Link>
           </div>
-          <div className="navbar-center hidden lg:flex ">
+          <div className="navbar-center hidden lg:flex text-accent ">
             <ul className="menu menu-horizontal p-0">{navManuItems}</ul>
           </div>
           <div className="navbar-end">
             <Link to={"login"}>
-              <button class="button mr-2 font-medium">Login</button>
+              <button className="button mr-2 font-medium">Login</button>
             </Link>
             <Link to={"signUp"}>
-              <button class="Signup-button font-medium">Sign Up</button>
+              <button className="Signup-button font-medium">Sign Up</button>
             </Link>
           </div>
         </div>

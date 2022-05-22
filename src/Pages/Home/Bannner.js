@@ -7,6 +7,8 @@ const Bannner = () => {
       <div
         style={{
           background: `url(${bg})`,
+          // backgroundImage:
+          backgroundAttachment: "fixed",
         }}
         className="py-1 mb-10"
       >

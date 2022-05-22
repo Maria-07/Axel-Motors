@@ -12,3 +12,5 @@ In the project directory, you can run:
     - DaisyUI
     - react-router-dom@6
     - heroicons/react
+    - react-query
+    - axios

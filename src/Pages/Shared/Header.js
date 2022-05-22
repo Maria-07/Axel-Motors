@@ -3,8 +3,8 @@ import { PhoneIcon, LocationMarkerIcon } from "@heroicons/react/solid";
 
 const Header = () => {
   return (
-    <div className="">
-      <div className="flex sm:mx-10 flex-wrap px-2 py-1 text-sm font-medium">
+    <div className="bg-accent text-neutral">
+      <div className="flex sm:mx-10 flex-wrap px-2 py-2 text-sm font-medium">
         <div className="flex justify-center items-center">
           <PhoneIcon className="h-5 w-5 mr-1 " />
           +1254 4564 8788

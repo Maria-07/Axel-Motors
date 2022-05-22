@@ -9,7 +9,7 @@ function CustomLink({ children, to, ...props }) {
     <div>
       <Link
         style={{
-          color: match ? "#EE2B47" : "white",
+          color: match ? "#EE2B47" : "#252525",
 
           //   textTransform: match ? "capitalize" : "none",
         }}
