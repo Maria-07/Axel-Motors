@@ -1,10 +1,22 @@
+import { signOut } from "firebase/auth";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import logo from "../../Assets/logo-01.png";
+import auth from "../../firebase.init";
 import CustomLink from "./CustomeLink";
 import "./Shared.css";
 
 const Navbar = () => {
+  const [user] = useAuthState(auth);
+
+  const handleSignOut = () => {
+    signOut(auth);
+    // localStorage.removeItem("accessToken");
+  };
+
+  console.log(user);
+
   const navManuItems = (
     <>
       <li>
@@ -56,12 +68,27 @@ const Navbar = () => {
             <ul className="menu menu-horizontal p-0">{navManuItems}</ul>
           </div>
           <div className="navbar-end">
-            <Link to={"login"}>
-              <button className="button mr-2 font-medium">Login</button>
-            </Link>
-            <Link to={"signUp"}>
-              <button className="Signup-button font-medium">Sign Up</button>
-            </Link>
+            {user ? (
+              <>
+                <div class="mx-2 sm:text-lg sm:font-medium sm:border-2 sm:px-2">
+                  {user.displayName}
+                </div>
+                <Link to={"login"} onClick={handleSignOut}>
+                  <button className="Signup-button mr-2 font-medium">
+                    LOGOUT
+                  </button>
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link to={"login"}>
+                  <button className="button mr-2 font-medium">Login</button>
+                </Link>
+                <Link to={"signUp"}>
+                  <button className="Signup-button font-medium">Sign Up</button>
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>

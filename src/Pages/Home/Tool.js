@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 const Tool = ({ tool }) => {
@@ -41,7 +42,9 @@ const Tool = ({ tool }) => {
             </p>
           </div>
           <div class="card-actions justify-start">
-            <button class="Signup-button font-medium">Purchase</button>
+            <button class="Signup-button font-medium">
+              <Link to={"purchase"}>Purchase</Link>
+            </button>
           </div>
         </div>
       </div>
