@@ -2,15 +2,8 @@ import React from "react";
 import "./Home.css";
 
 const Tool = ({ tool }) => {
-  const {
-    img,
-    description,
-    availableQuantity,
-    minimumQuantity,
-    index,
-    name,
-    price,
-  } = tool;
+  const { img, description, availableQuantity, minimumQuantity, name, price } =
+    tool;
 
   //   const rndInt = Math.floor(Math.random() * 6);
   //   //   console.log(rndInt);
