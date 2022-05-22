@@ -31,6 +31,7 @@ const BusinessSummarys = () => {
 
   return (
     <div className="container mx-auto ">
+      <div class="divider"></div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-16">
         {tools.map((tool, index) => (
           <BusinessSummary key={index} tool={tool}></BusinessSummary>
