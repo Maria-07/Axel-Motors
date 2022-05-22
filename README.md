@@ -14,3 +14,6 @@ In the project directory, you can run:
     - heroicons/react
     - react-query
     - axios
+    - firebase
+    - react-firebase-hooks
+    - react-hook-form
