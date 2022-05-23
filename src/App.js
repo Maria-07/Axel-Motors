@@ -19,7 +19,7 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
         <Route
-          path="/purchase"
+          path="/purchase/:toolID"
           element={
             <Required>
               <Purchase></Purchase>

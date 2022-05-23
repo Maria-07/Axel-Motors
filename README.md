@@ -17,3 +17,6 @@ In the project directory, you can run:
     - firebase
     - react-firebase-hooks
     - react-hook-form
+    - react-rating
+    - react-fontawesome
+    -

@@ -5,13 +5,13 @@ import Tool from "./Tool";
 const Tools = () => {
   const [tools, setTools] = useState([]);
   useEffect(() => {
-    axios("tools.json").then((data) => setTools(data.data));
+    axios("http://localhost:5000/tools").then((data) => setTools(data.data));
   }, []);
 
   console.log(tools);
   const sixTools = tools.slice(0, 6);
   return (
-    <div className="container my-20 mx-auto">
+    <div id="tools" className="container my-20 mx-auto">
       <h1 className="text-4xl font-medium text-center text-primary">
         Popular Tools {tools.length}
       </h1>

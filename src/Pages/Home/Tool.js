@@ -3,8 +3,15 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 
 const Tool = ({ tool }) => {
-  const { img, description, availableQuantity, minimumQuantity, name, price } =
-    tool;
+  const {
+    _id,
+    img,
+    description,
+    availableQuantity,
+    minimumQuantity,
+    name,
+    price,
+  } = tool;
 
   //   const rndInt = Math.floor(Math.random() * 6);
   //   //   console.log(rndInt);
@@ -43,7 +50,7 @@ const Tool = ({ tool }) => {
           </div>
           <div class="card-actions justify-start">
             <button class="Signup-button font-medium">
-              <Link to={"purchase"}>Purchase</Link>
+              <Link to={`purchase/${_id}`}>Purchase</Link>
             </button>
           </div>
         </div>
