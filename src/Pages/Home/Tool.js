@@ -18,19 +18,19 @@ const Tool = ({ tool }) => {
   //   console.log(index % 2);
   return (
     <div className="tool mx-auto my-5">
-      <div class="card w-96 bg-base-100 shadow-xl">
+      <div className="card w-96 bg-base-100 shadow-xl">
         <figure>
           <img src={img} alt="Shoes" />
         </figure>
-        <div class="card-body">
-          <h2 class="card-title">
+        <div className="card-body">
+          <h2 className="card-title">
             {name}
-            <div class="badge badge-secondary">NEW</div>
+            <div className="badge badge-secondary">NEW</div>
           </h2>
           <p>{description}</p>
-          <div class="card-actions justify-start mb-7">
-            <div class="badge badge-outline">Popular</div>
-            <div class="badge badge-outline bg-primary text-neutral">
+          <div className="card-actions justify-start mb-7">
+            <div className="badge badge-outline">Popular</div>
+            <div className="badge badge-outline bg-primary text-neutral">
               Best Seller
             </div>
           </div>
@@ -48,8 +48,8 @@ const Tool = ({ tool }) => {
               <span className="text-primary text-xl">{minimumQuantity} </span>
             </p>
           </div>
-          <div class="card-actions justify-start">
-            <button class="Signup-button font-medium">
+          <div className="card-actions justify-start">
+            <button className="Signup-button font-medium">
               <Link to={`purchase/${_id}`}>Purchase</Link>
             </button>
           </div>

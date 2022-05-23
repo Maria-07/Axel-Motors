@@ -17,7 +17,14 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
+        <Route
+          path="/dashboard"
+          element={
+            <Required>
+              <Dashboard></Dashboard>
+            </Required>
+          }
+        ></Route>
         <Route
           path="/purchase/:toolID"
           element={

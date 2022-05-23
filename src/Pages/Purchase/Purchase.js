@@ -1,5 +1,6 @@
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
@@ -50,28 +51,39 @@ const Purchase = () => {
     setQuantity(quantity + 1);
   };
 
-  console.log(quantity);
+  // console.log(quantity);
 
   const onSubmit = async (data) => {
-    console.log(data);
-    const leftQuantity = availableQuantity - quantity;
+    // console.log(data);
+
     const order = {
+      tools_id: toolID,
       name: user.displayName,
       email: user.email,
       phone: data.phone,
       company: data.company,
       address: data.address,
       quantity: quantity,
-      availableQuantity: leftQuantity,
     };
-    console.log(order);
+    // console.log(order);
+
+    // axios({
+    //   method: "post",
+    //   url: "http://localhost:5000/orders",
+    //   data: order,
+    // }).then((res) => console.log(res));
+
+    axios
+      .post("http://localhost:5000/orders", order)
+      .then((res) => console.log(res));
+
     // console.log(data.image[0]);
-    // reset();
+    reset();
   };
 
   return (
     <div className="container mx-auto">
-      <div class="mx-10 text-sm breadcrumbs">
+      <div className="mx-10 text-sm breadcrumbs">
         <ul>
           <li>
             <Link to={"/"}>Home</Link>
@@ -108,15 +120,17 @@ const Purchase = () => {
               <h5 className=" text-lg font-medium">Key Features:</h5>
               <ul>
                 {tags &&
-                  tags.map((tag) => (
-                    <li className=" text-sm text-accent">{tag}</li>
+                  tags.map((tag, index) => (
+                    <li key={index} className=" text-sm text-accent">
+                      {tag}
+                    </li>
                   ))}
               </ul>
             </div>
           </div>
-          <div class="card mx-10 sm:ml-16 w-96 bg-base-100 shadow-xl">
-            <div class="card-body">
-              <h2 class="card-title text-4xl font-medium text-primary">
+          <div className="card mx-10 sm:ml-16 w-96 bg-base-100 shadow-xl">
+            <div className="card-body">
+              <h2 className="card-title text-4xl font-medium text-primary">
                 {price}
               </h2>
               <div className=" ">
