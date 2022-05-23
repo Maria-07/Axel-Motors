@@ -19,4 +19,4 @@ In the project directory, you can run:
     - react-hook-form
     - react-rating
     - react-fontawesome
-    -
+    - react-toastify

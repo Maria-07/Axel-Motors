@@ -8,6 +8,7 @@ import Rating from "react-rating";
 // import Rating from "react-rating";
 
 import { Link, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 import SetTool from "../../Hooks/SetTool";
 
@@ -73,11 +74,11 @@ const Purchase = () => {
     //   data: order,
     // }).then((res) => console.log(res));
 
-    axios
-      .post("http://localhost:5000/orders", order)
-      .then((res) => console.log(res));
+    axios.post("http://localhost:5000/orders", order).then((res) => {
+      toast.dark(`Hey 👋, Your ${name} tools added`);
+      console.log(res);
+    });
 
-    // console.log(data.image[0]);
     reset();
   };
 
