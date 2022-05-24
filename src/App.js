@@ -14,6 +14,7 @@ import Navbar from "./Pages/Shared/Navbar";
 import Required from "./Pages/Shared/Required";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import AllUsers from "./Pages/Dashboard/AllUsers";
 
 function App() {
   return (
@@ -30,9 +31,10 @@ function App() {
             </Required>
           }
         >
-          <Route index element={<MyOrders></MyOrders>}></Route>
+          <Route path="order" element={<MyOrders></MyOrders>}></Route>
           <Route path="reviews" element={<AddReview></AddReview>}></Route>
-          <Route path="profile" element={<MyProfile></MyProfile>}></Route>
+          <Route index element={<MyProfile></MyProfile>}></Route>
+          <Route path="users" element={<AllUsers></AllUsers>}></Route>
         </Route>
         <Route
           path="/purchase/:toolID"
