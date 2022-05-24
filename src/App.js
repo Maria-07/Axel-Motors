@@ -15,6 +15,7 @@ import Required from "./Pages/Shared/Required";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import AllUsers from "./Pages/Dashboard/AllUsers";
+import NotFOundPage from "./Pages/Shared/NotFOundPage";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         ></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signUp" element={<SignUp></SignUp>}></Route>
+        <Route path="/*" element={<NotFOundPage></NotFOundPage>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer />
