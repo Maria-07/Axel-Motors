@@ -7,6 +7,7 @@ const SetTool = (id) => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
     })
       .then((res) => res.json())

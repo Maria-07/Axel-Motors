@@ -8,9 +8,9 @@ const MyOrder = ({ order, setDltOrder }) => {
   const { name, img, price, availableQuantity } = toolData;
   return (
     <div className="my-5">
-      <div class="card p-3 card-side bg-base-100 shadow-xl">
+      <div class="card flex flex-wrap justify-center items-center p-3 card-side bg-base-100 shadow-xl">
         <figure>
-          <img src={img} className=" h-52" alt="Movie" />
+          <img src={img} className=" h-72" alt="Movie" />
         </figure>
         <div class="card-body">
           <h2 class="card-title">{name}</h2>

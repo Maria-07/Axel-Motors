@@ -74,10 +74,16 @@ const Purchase = () => {
     //   data: order,
     // }).then((res) => console.log(res));
 
-    axios.post("http://localhost:5000/orders", order).then((res) => {
-      toast.dark(`Hey 👋, Your ${name} tools added`);
-      console.log(res);
-    });
+    axios
+      .post("http://localhost:5000/orders", order, {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
+      .then((res) => {
+        toast.dark(`Hey 👋, Your ${name} tools added`);
+        console.log(res);
+      });
 
     reset();
   };

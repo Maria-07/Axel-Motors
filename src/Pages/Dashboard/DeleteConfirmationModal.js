@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import SetTool from "../../Hooks/SetTool";
 
 const DeleteConfirmationModal = ({ dltOrder, setDltOrder, refetch }) => {
-  const { name, tools_id, email } = dltOrder;
+  const { tools_id, email } = dltOrder;
   const [toolData] = SetTool(tools_id);
   console.log(dltOrder);
   const deleteDoctor = (email) => {

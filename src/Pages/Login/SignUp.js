@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   useCreateUserWithEmailAndPassword,
   useSignInWithGoogle,
@@ -7,6 +7,7 @@ import {
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import UseToken from "../../Hooks/UseToken";
 import Loading from "../Shared/Loading";
 
 const SignUp = () => {
@@ -18,7 +19,7 @@ const SignUp = () => {
   // useCreateUserWithEmailAndPassword(auth);
   //update profile
   const [updateProfile, updating, uerror] = useUpdateProfile(auth);
-  //   const [token] = UseToken(user || guser);
+  const [token] = UseToken(user || guser);
 
   const {
     register,
@@ -36,11 +37,11 @@ const SignUp = () => {
     navigate(from, { replace: true });
   }
 
-  //   useEffect(() => {
-  //     if (token) {
-  //       navigate(from, { replace: true });
-  //     }
-  //   }, [from, token, navigate]);
+  useEffect(() => {
+    if (token) {
+      navigate(from, { replace: true });
+    }
+  }, [from, token, navigate]);
 
   if (loading || gloading || updating) {
     return <Loading></Loading>;
@@ -58,11 +59,10 @@ const SignUp = () => {
     console.log(data);
     console.log(data.name);
     const { email, password } = data;
+    // console.log(data.displayName);
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: data.name });
-    // await updateProfile({ displayName: name });
     console.log("update done");
-    // console.log(user.displayName);
     reset();
   };
   return (

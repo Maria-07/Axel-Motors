@@ -20,15 +20,15 @@ const MyOrders = () => {
   } = useQuery("doctors", () =>
     fetch(`http://localhost:5000/orders?email=${user.email}`, {
       method: "Get",
-      // headers: {
-      //   authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      // },
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
     }).then((res) => {
       console.log(res);
       if (res.status === 401 || res.status === 403) {
         navigate("/");
         signOut(auth);
-        // localStorage.removeItem("accessToken");
+        localStorage.removeItem("accessToken");
       }
       return res.json();
     })
