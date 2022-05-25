@@ -15,31 +15,52 @@ const AddReview = () => {
     reset,
   } = useForm();
 
-  const onSubmit = async (data) => {
-    // console.log(data);
-    const addReview = {
-      name: user.displayName,
-      email: user.email,
-      rating: data.rating,
-      review: data.review,
-    };
-    console.log(addReview);
+  const imgStorageKey = "2b51a15c9d1ec1cecc091e49f7c253e1";
 
-    fetch(`http://localhost:5000/review`, {
+  const onSubmit = async (data) => {
+    const image = data.image[0];
+    const formData = new FormData();
+    formData.append("image", image);
+    const url = `https://api.imgbb.com/1/upload?key=${imgStorageKey}`;
+    // console.log(data);
+
+    fetch(url, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(addReview),
+      body: formData,
     })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.insertedId) {
-          toast.dark(`Hey 👋, Your profile is added`);
+      .then((res) => res.json())
+      .then((result) => {
+        console.log("imagebb", result);
+
+        if (result.success) {
+          const img = result.data.url;
+          console.log(img);
+          const addReview = {
+            name: user.displayName,
+            email: user.email,
+            rating: data.rating,
+            review: data.review,
+            img: img,
+          };
+          console.log(addReview);
+          fetch(`http://localhost:5000/review`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(addReview),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.insertedId) {
+                toast.dark(`Hey 👋, Your profile is added`);
+              }
+              console.log("Success:", data);
+            });
         }
-        console.log("Success:", data);
       });
-    reset();
+
+    // reset();
   };
   return (
     <div>
@@ -136,6 +157,31 @@ const AddReview = () => {
             </label>
           </div>
           <br />
+
+          {/* //photo  */}
+
+          <label className="label">
+            <span className="label-text font-medium my-1">Name</span>
+          </label>
+          <input
+            type="file"
+            className="input w-full max-w-xs"
+            {...register("image", {
+              required: {
+                value: true,
+                message: "image is required",
+              },
+            })}
+          />
+          {/* <input type="file" {...register("file")} /> */}
+          <label className="label">
+            <span className="label-text-alt">
+              {" "}
+              {errors.image?.type === "required" && (
+                <p className=" text-red-500">{errors.image.message}</p>
+              )}
+            </span>
+          </label>
           {errorMessage}
 
           {/* submit  */}
