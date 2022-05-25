@@ -1,16 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const ManageProduct = ({ tool, setDltTool }) => {
-  const {
-    _id,
-    img,
-    description,
-    availableQuantity,
-    minimumQuantity,
-    name,
-    price,
-  } = tool;
+  const { img, description, availableQuantity, minimumQuantity, name, price } =
+    tool;
   return (
     <div className="tool mx-auto my-5">
       <div className="card w-96 bg-base-100 shadow-xl">
@@ -31,7 +23,7 @@ const ManageProduct = ({ tool, setDltTool }) => {
           </div>
           <div className="mb-5">
             <p className="text-lg  font-medium">
-              Price : <span className=" text-xl text-primary">{price}</span>
+              $Price : <span className=" text-xl text-primary">{price}</span>
               <span className=" text-xs">/unit</span>
             </p>
             <p className=" text-lg font-medium">

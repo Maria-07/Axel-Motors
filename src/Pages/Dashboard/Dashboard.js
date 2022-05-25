@@ -75,7 +75,7 @@ const Dashboard = () => {
                 <li>
                   <CustomLink
                     className=" font-medium text-xl"
-                    to={"/dashboard/users"}
+                    to={"/dashboard/allOrders"}
                   >
                     Manage All Orders
                   </CustomLink>

@@ -17,7 +17,7 @@ const MyOrders = () => {
     data: orders,
     isLoading,
     refetch,
-  } = useQuery("doctors", () =>
+  } = useQuery("orders", () =>
     fetch(`http://localhost:5000/orders?email=${user.email}`, {
       method: "Get",
       headers: {

@@ -21,3 +21,4 @@ In the project directory, you can run:
     - react-fontawesome
     - react-toastify
     - react-spinner-animated
+    - react-stripe-js

@@ -1,11 +1,8 @@
-import { faSignOut } from "@fortawesome/free-solid-svg-icons";
 import { signOut } from "firebase/auth";
 import React, { useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import { Navigate } from "react-router-dom";
 import auth from "../../firebase.init";
-import UseTools from "../../Hooks/UseTools";
 import Loading from "../Shared/Loading";
 import DeleteToolConfirm from "./DeleteToolConfirm";
 import ManageProduct from "./ManageProduct";

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SetTool from "../../Hooks/SetTool";
 
 const MyOrder = ({ order, setDltOrder }) => {
@@ -40,14 +41,26 @@ const MyOrder = ({ order, setDltOrder }) => {
           </p>
 
           <div class="card-actions justify-end">
-            <label
-              onClick={() => setDltOrder(order)}
-              for="delete-confirm-modal"
-              class="btn btn-outline btn-danger"
-            >
-              DELETE
-            </label>
-            <button class="btn btn-primary">PAY NOW</button>
+            {!toolData.paid ? (
+              <>
+                <label
+                  onClick={() => setDltOrder(order)}
+                  for="delete-confirm-modal"
+                  class="btn btn-outline btn-danger"
+                >
+                  DELETE
+                </label>
+                <Link to={`/dashboard/payment/${tools_id}`}>
+                  <button class="btn btn-primary">PAY NOW</button>
+                </Link>
+              </>
+            ) : (
+              <span class=" bg-secondary text-neutral button">Paid</span>
+            )}
+
+            {/* {toolData.paid && (
+              <span class=" bg-secondary text-neutral button">Paid</span>
+            )} */}
           </div>
         </div>
       </div>

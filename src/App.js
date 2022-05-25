@@ -19,6 +19,9 @@ import NotFOundPage from "./Pages/Shared/NotFOundPage";
 import MyPortfolio from "./Pages/Dashboard/MyPortfolio";
 import ManageProducts from "./Pages/Dashboard/ManageProducts";
 import AddNewProduct from "./Pages/Dashboard/AddNewProduct";
+import ManageAllOrders from "./Pages/Dashboard/ManageAllOrders";
+import RequiredAdmin from "./Pages/Shared/RequiredAdmin";
+import Payment from "./Pages/Dashboard/Payment";
 
 function App() {
   return (
@@ -39,13 +42,30 @@ function App() {
           <Route path="order" element={<MyOrders></MyOrders>}></Route>
           <Route path="reviews" element={<AddReview></AddReview>}></Route>
           <Route path="portfolio" element={<MyPortfolio></MyPortfolio>}></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route
             path="manageProducts"
-            element={<ManageProducts></ManageProducts>}
+            element={
+              <RequiredAdmin>
+                <ManageProducts></ManageProducts>
+              </RequiredAdmin>
+            }
           ></Route>
           <Route
             path="addNewTool"
-            element={<AddNewProduct></AddNewProduct>}
+            element={
+              <RequiredAdmin>
+                <AddNewProduct></AddNewProduct>
+              </RequiredAdmin>
+            }
+          ></Route>
+          <Route
+            path="allOrders"
+            element={
+              <RequiredAdmin>
+                <ManageAllOrders></ManageAllOrders>
+              </RequiredAdmin>
+            }
           ></Route>
 
           <Route path="users" element={<AllUsers></AllUsers>}></Route>
