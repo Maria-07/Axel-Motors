@@ -1,10 +1,49 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import auth from "../../firebase.init";
 
 const AddReview = () => {
+  const [user] = useAuthState(auth);
+  let errorMessage;
+
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    reset,
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    // console.log(data);
+    const addReview = {
+      name: user.displayName,
+      email: user.email,
+      rating: data.rating,
+      review: data.review,
+    };
+    console.log(addReview);
+
+    fetch(`http://localhost:5000/review`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(addReview),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.insertedId) {
+          toast.dark(`Hey 👋, Your profile is added`);
+        }
+        console.log("Success:", data);
+      });
+    reset();
+  };
   return (
     <div>
       <div className="">
-        <h1 className="text-xl font-medium">REVIEWS</h1>
         <div class="rating rating-md my-3">
           <input
             type="radio"
@@ -33,7 +72,7 @@ const AddReview = () => {
             class="mask mask-star-2 bg-yellow-500"
           />
         </div>
-        <div className=" my-5 w-3/4">
+        <div className=" my-5 w-1/4">
           <div class="w-1/4 bg-gray-200 h-2 mb-3">
             <div class="bg-green-500 h-2 rounded-md"></div>
           </div>
@@ -47,6 +86,65 @@ const AddReview = () => {
             <div class="bg-red-500 h-2 rounded-md"></div>
           </div>
         </div>
+      </div>
+
+      <div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <h1 className="text-xl font-medium mt-10">ADD YOUR REVIEW</h1>
+          {/* Ratings  */}
+          <label className="label">
+            <span className="label-text font-medium my-1">Rating</span>
+          </label>
+
+          <select
+            {...register("rating")}
+            class="select select-bordered w-full max-w-xs mb-4"
+          >
+            <option disabled selected>
+              5
+            </option>
+            <option>4</option>
+            <option>3</option>
+            <option>2</option>
+            <option>1</option>
+          </select>
+
+          {/* review comment  */}
+          <div class="form-control">
+            <label className="label">
+              <span className="label-text font-medium my-1">
+                Add your review
+              </span>
+            </label>
+            <textarea
+              class="textarea textarea-bordered h-24 w-full max-w-xs"
+              placeholder="Review"
+              {...register("review", {
+                required: {
+                  value: true,
+                  message: "review is required **",
+                },
+              })}
+            ></textarea>
+            <label className="label">
+              <span className="label-text-alt">
+                {" "}
+                {errors.review?.type === "required" && (
+                  <p className=" text-red-500">{errors.review.message}</p>
+                )}
+              </span>
+            </label>
+          </div>
+          <br />
+          {errorMessage}
+
+          {/* submit  */}
+          <input
+            className={`btn btn-primary my-5 text-white max-w-xs  w-full`}
+            type="submit"
+            value={"Add"}
+          />
+        </form>
       </div>
     </div>
   );

@@ -44,7 +44,7 @@ const Dashboard = () => {
                     className=" font-medium text-xl"
                     to={"/dashboard/reviews"}
                   >
-                    Reviews
+                    Add a Review
                   </CustomLink>
                 </li>
               </>
