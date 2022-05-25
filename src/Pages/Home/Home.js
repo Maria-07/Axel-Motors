@@ -3,6 +3,7 @@ import Bannner from "./Bannner";
 import BusinessSummarys from "./BusinessSummarys";
 import Reviews from "./Reviews";
 import ServicesBox from "./ServicesBox";
+import Shop from "./Shop";
 import Tools from "./Tools";
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
     <div>
       <Bannner></Bannner>
       <ServicesBox></ServicesBox>
+      <Shop></Shop>
       <Tools></Tools>
       <Reviews></Reviews>
       <BusinessSummarys></BusinessSummarys>
