@@ -43,7 +43,6 @@ const AllUsers = () => {
                 <th></th>
                 <th>Email</th>
                 <th>Admin</th>
-                <th>Remove</th>
               </tr>
             </thead>
             <tbody>

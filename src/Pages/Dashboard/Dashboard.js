@@ -54,6 +54,14 @@ const Dashboard = () => {
                 My Profile
               </CustomLink>
             </li>
+            <li>
+              <CustomLink
+                className=" font-medium text-xl"
+                to={"/dashboard/portfolio"}
+              >
+                My Portfolio
+              </CustomLink>
+            </li>
             {admin && (
               <>
                 <li>

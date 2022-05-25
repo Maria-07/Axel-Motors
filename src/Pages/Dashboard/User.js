@@ -25,6 +25,28 @@ const User = ({ user, index, refetch }) => {
         }
       });
   };
+  // const removeAdmin = () => {
+  //   fetch(`http://localhost:5000/users/adminRemove/${email}`, {
+  //     method: "Put",
+  //     headers: {
+  //       authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+  //     },
+  //   })
+  //     .then((res) => {
+  //       if (res.status === 403) {
+  //         toast.error("Failed to make a admin");
+  //       }
+  //       return res.json();
+  //     })
+  //     .then((data) => {
+  //       console.log(data);
+  //       console.log(data.modifiedCount);
+  //       if (data.modifiedCount > 0) {
+  //         toast.success("Successfully remove an admin");
+  //         refetch();
+  //       }
+  //     });
+  // };
   return (
     <tr>
       <th>{index + 1}</th>
@@ -35,9 +57,6 @@ const User = ({ user, index, refetch }) => {
             Make Admin
           </button>
         )}
-      </td>
-      <td>
-        <button class="btn Signup-button btn-sm">Remove Admin</button>
       </td>
     </tr>
   );
