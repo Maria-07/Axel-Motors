@@ -83,17 +83,17 @@ const Dashboard = () => {
                 <li>
                   <CustomLink
                     className=" font-medium text-xl"
-                    to={"/dashboard/users"}
+                    to={"/dashboard/addNewTool"}
                   >
-                    Add A Product
+                    Add A New Tool
                   </CustomLink>
                 </li>
                 <li>
                   <CustomLink
                     className=" font-medium text-xl"
-                    to={"/dashboard/users"}
+                    to={"/dashboard/manageProducts"}
                   >
-                    Manage Products
+                    Manage All Products
                   </CustomLink>
                 </li>
               </>

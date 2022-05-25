@@ -1,12 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import UseTools from "../../Hooks/UseTools";
 import Tool from "./Tool";
 
 const Tools = () => {
-  const [tools, setTools] = useState([]);
-  useEffect(() => {
-    axios("http://localhost:5000/tools").then((data) => setTools(data.data));
-  }, []);
+  const [tools] = UseTools();
 
   console.log(tools);
   const sixTools = tools.slice(0, 6);

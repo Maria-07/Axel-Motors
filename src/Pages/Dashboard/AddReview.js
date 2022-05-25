@@ -47,6 +47,7 @@ const AddReview = () => {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
+              authorization: `Bearer ${localStorage.getItem("accessToken")}`,
             },
             body: JSON.stringify(addReview),
           })
@@ -161,7 +162,7 @@ const AddReview = () => {
           {/* //photo  */}
 
           <label className="label">
-            <span className="label-text font-medium my-1">Name</span>
+            <span className="label-text font-medium my-1">photo</span>
           </label>
           <input
             type="file"
@@ -173,7 +174,7 @@ const AddReview = () => {
               },
             })}
           />
-          {/* <input type="file" {...register("file")} /> */}
+
           <label className="label">
             <span className="label-text-alt">
               {" "}
