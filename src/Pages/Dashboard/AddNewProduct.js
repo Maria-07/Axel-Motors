@@ -1,11 +1,8 @@
 import React from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import auth from "../../firebase.init";
 
 const AddNewProduct = () => {
-  const [user] = useAuthState(auth);
   let errorMessage;
 
   const {
@@ -62,7 +59,7 @@ const AddNewProduct = () => {
         }
       });
 
-    // reset();
+    reset();
   };
   return (
     <div>
@@ -206,13 +203,9 @@ const AddNewProduct = () => {
           </label>
 
           {/* //photo  */}
-
-          <label className="label">
-            <span className="label-text font-medium my-1">Image</span>
-          </label>
           <input
             type="file"
-            className="input w-full max-w-xs"
+            className="input w-full max-w-xs input-bordered pt-2"
             {...register("image", {
               required: {
                 value: true,

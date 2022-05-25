@@ -161,12 +161,9 @@ const AddReview = () => {
 
           {/* //photo  */}
 
-          <label className="label">
-            <span className="label-text font-medium my-1">photo</span>
-          </label>
           <input
             type="file"
-            className="input w-full max-w-xs"
+            className="input w-full max-w-xs input-bordered pt-2"
             {...register("image", {
               required: {
                 value: true,

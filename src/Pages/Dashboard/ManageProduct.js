@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ManageProduct = ({ tool, setDltOrder }) => {
+const ManageProduct = ({ tool, setDltTool }) => {
   const {
     _id,
     img,
@@ -44,15 +44,13 @@ const ManageProduct = ({ tool, setDltOrder }) => {
             </p>
           </div>
           <div className="card-actions justify-start">
-            <button className="Signup-button font-medium">
-              <label
-                onClick={() => setDltOrder(tool)}
-                for="delete-confirm-modal"
-                class="btn btn-outline btn-danger"
-              >
-                DELETE
-              </label>
-            </button>
+            <label
+              onClick={() => setDltTool(tool)}
+              for="delete-confirm-modal"
+              class="btn btn-outline btn-danger Signup-button font-medium"
+            >
+              DELETE
+            </label>
           </div>
         </div>
       </div>

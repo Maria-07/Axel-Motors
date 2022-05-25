@@ -1,10 +1,43 @@
+import { faSignOut } from "@fortawesome/free-solid-svg-icons";
+import { signOut } from "firebase/auth";
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useQuery } from "react-query";
+import { Navigate } from "react-router-dom";
+import auth from "../../firebase.init";
 import UseTools from "../../Hooks/UseTools";
+import Loading from "../Shared/Loading";
+import DeleteToolConfirm from "./DeleteToolConfirm";
 import ManageProduct from "./ManageProduct";
 
 const ManageProducts = () => {
-  const [dltOrder, setDltOrder] = useState(null);
-  const [tools] = UseTools();
+  const [dltTool, setDltTool] = useState(null);
+  // const [tools] = UseTools();
+
+  const {
+    data: tools,
+    isLoading,
+    refetch,
+  } = useQuery("doctors", () =>
+    fetch("http://localhost:5000/tools", {
+      method: "Get",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => {
+      console.log(res);
+      if (res.status === 401 || res.status === 403) {
+        Navigate("/");
+        signOut(auth);
+        localStorage.removeItem("accessToken");
+      }
+      return res.json();
+    })
+  );
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
+
   return (
     <div>
       <div id="tools" className="container my-20 mx-auto">
@@ -15,11 +48,18 @@ const ManageProducts = () => {
           {tools?.map((tool, index) => (
             <ManageProduct
               key={index}
-              setDltOrder={setDltOrder}
+              setDltTool={setDltTool}
               tool={tool}
             ></ManageProduct>
           ))}
         </div>
+        {dltTool && (
+          <DeleteToolConfirm
+            dltTool={dltTool}
+            setDltTool={setDltTool}
+            refetch={refetch}
+          ></DeleteToolConfirm>
+        )}
       </div>
     </div>
   );
