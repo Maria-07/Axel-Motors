@@ -53,14 +53,14 @@ const AddReview = () => {
             .then((response) => response.json())
             .then((data) => {
               if (data.insertedId) {
-                toast.dark(`Hey 👋, Your profile is added`);
+                toast.dark(`Hey 👋, Thanks for your Review`);
               }
               console.log("Success:", data);
             });
         }
       });
 
-    // reset();
+    reset();
   };
   return (
     <div>

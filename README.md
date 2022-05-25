@@ -20,3 +20,4 @@ In the project directory, you can run:
     - react-rating
     - react-fontawesome
     - react-toastify
+    - react-spinner-animated

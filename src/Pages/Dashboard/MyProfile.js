@@ -36,8 +36,9 @@ const MyProfile = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.modifiedCount > 0) {
-          toast.dark(`Hey 👋, Your profile is added`);
+        console.log(data);
+        if (data.modifiedCount > 0 || data.upsertedCount > 0) {
+          toast.dark(`Hey 👋, Your profile is updated`);
         }
         console.log("Success:", data);
       });
@@ -82,21 +83,8 @@ const MyProfile = () => {
           placeholder="Your Phone Number"
           name="phone"
           className="input input-bordered w-full max-w-xs"
-          {...register("phone", {
-            required: {
-              value: true,
-              message: "Phone number is required",
-            },
-          })}
+          {...register("phone")}
         />
-        <label className="label">
-          <span className="label-text-alt">
-            {" "}
-            {errors.phone?.type === "required" && (
-              <p className=" text-red-500">{errors.phone.message}</p>
-            )}
-          </span>
-        </label>
 
         {/* Education Status  */}
         <label className="label">
@@ -130,21 +118,8 @@ const MyProfile = () => {
           placeholder="Your Address"
           name="address"
           className="input input-bordered w-full max-w-xs"
-          {...register("address", {
-            required: {
-              value: true,
-              message: "Address is required",
-            },
-          })}
+          {...register("address")}
         />
-        <label className="label">
-          <span className="label-text-alt">
-            {" "}
-            {errors.address?.type === "required" && (
-              <p className=" text-red-500">{errors.address.message}</p>
-            )}
-          </span>
-        </label>
 
         {/* City Status  */}
         <label className="label">

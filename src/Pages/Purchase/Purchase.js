@@ -66,13 +66,6 @@ const Purchase = () => {
       address: data.address,
       quantity: quantity,
     };
-    // console.log(order);
-
-    // axios({
-    //   method: "post",
-    //   url: "http://localhost:5000/orders",
-    //   data: order,
-    // }).then((res) => console.log(res));
 
     axios
       .post("http://localhost:5000/orders", order, {
