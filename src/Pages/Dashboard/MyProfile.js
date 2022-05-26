@@ -22,7 +22,7 @@ const MyProfile = () => {
       email: user.email,
       phone: data.phone,
       education: data.education,
-      address: data.address,
+      link: data.link,
       district: data.district,
     };
     console.log(users);
@@ -108,17 +108,17 @@ const MyProfile = () => {
           <option>HIgher level</option>
         </select>
 
-        {/* Address  */}
+        {/* link  */}
 
         <label className="label">
-          <span className="label-text font-medium my-1">Address</span>
+          <span className="label-text font-medium my-1">add link</span>
         </label>
         <input
           type="text"
-          placeholder="Your Address"
-          name="address"
+          placeholder="Your link"
+          name="link"
           className="input input-bordered w-full max-w-xs"
-          {...register("address")}
+          {...register("link")}
         />
 
         {/* City Status  */}

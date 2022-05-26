@@ -97,7 +97,13 @@ const Purchase = () => {
 
       <div className="my-24 ">
         <div className="tool-info flex flex-wrap">
-          <img src={img} className=" m-10 shadow-lg h-96" alt="" />
+          <div>
+            <img src={img} className=" m-10 shadow-lg h-96" alt="" />
+            <p className=" m-10 text-lg font-medium ">
+              User Name : {user.displayName} <br />
+              User Email : {user.email}
+            </p>
+          </div>
           <div className="tool-body w-96 m-10">
             <h3 className="text-3xl font-medium">{name} </h3>
             <h1 className=" font-medium my-2">ToolsID : {toolID}</h1>

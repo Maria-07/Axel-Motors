@@ -1,12 +1,42 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SetTool from "../../Hooks/SetTool";
+import { Navigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import auth from "../../firebase.init";
+import { useQuery } from "react-query";
+import Loading from "../Shared/Loading";
 
 const MyOrder = ({ order, setDltOrder }) => {
   const { tools_id, email, company, address, phone, quantity } = order;
   const [toolData] = SetTool(tools_id);
-
   const { name, img, price, availableQuantity } = toolData;
+
+  const {
+    data: transaction,
+    isLoading,
+    refetch,
+  } = useQuery("transaction", () =>
+    fetch(`http://localhost:5000/payment/${tools_id}`, {
+      method: "Get",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => {
+      console.log(res);
+      if (res.status === 401 || res.status === 403) {
+        Navigate("/");
+        signOut(auth);
+        localStorage.removeItem("accessToken");
+      }
+      return res.json();
+    })
+  );
+
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
+
   return (
     <div className="my-5">
       <div class="card flex flex-wrap justify-center items-center p-3 card-side bg-base-100 shadow-xl">
@@ -38,6 +68,12 @@ const MyOrder = ({ order, setDltOrder }) => {
             <span className=" text-accent text-normal">{address} </span>
             <br />
             Contact : <span className=" text-accent text-normal">{phone} </span>
+            <br />
+            {toolData.paid && (
+              <p className="text-green-500">
+                Transaction ID : {transaction.transactionId}
+              </p>
+            )}
           </p>
 
           <div class="card-actions justify-end">
@@ -57,10 +93,6 @@ const MyOrder = ({ order, setDltOrder }) => {
             ) : (
               <span class=" bg-secondary text-neutral button">Paid</span>
             )}
-
-            {/* {toolData.paid && (
-              <span class=" bg-secondary text-neutral button">Paid</span>
-            )} */}
           </div>
         </div>
       </div>
