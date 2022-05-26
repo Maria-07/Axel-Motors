@@ -16,7 +16,7 @@ const ManageProducts = () => {
     isLoading,
     refetch,
   } = useQuery("doctors", () =>
-    fetch("http://localhost:5000/tools", {
+    fetch("https://gentle-mesa-53568.herokuapp.com/tools", {
       method: "Get",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

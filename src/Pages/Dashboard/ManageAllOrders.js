@@ -15,7 +15,7 @@ const ManageAllOrders = () => {
     isLoading,
     refetch,
   } = useQuery("orders", () =>
-    fetch(`http://localhost:5000/allOrders`, {
+    fetch(`https://gentle-mesa-53568.herokuapp.com/allOrders`, {
       method: "Get",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

@@ -68,7 +68,7 @@ const Purchase = () => {
     };
 
     axios
-      .post("http://localhost:5000/orders", order, {
+      .post("https://gentle-mesa-53568.herokuapp.com/orders", order, {
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },

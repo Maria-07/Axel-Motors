@@ -5,7 +5,9 @@ import Review from "./Review";
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    axios("http://localhost:5000/review").then((data) => setReviews(data.data));
+    axios("https://gentle-mesa-53568.herokuapp.com/review").then((data) =>
+      setReviews(data.data)
+    );
   }, []);
   return (
     <div className=" bg-gray-800 py-16">

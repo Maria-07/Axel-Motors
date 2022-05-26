@@ -17,7 +17,7 @@ const MyOrder = ({ order, setDltOrder }) => {
     isLoading,
     refetch,
   } = useQuery("transaction", () =>
-    fetch(`http://localhost:5000/payment/${tools_id}`, {
+    fetch(`https://gentle-mesa-53568.herokuapp.com/payment/${tools_id}`, {
       method: "Get",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

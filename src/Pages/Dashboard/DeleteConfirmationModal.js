@@ -7,7 +7,7 @@ const DeleteConfirmationModal = ({ dltOrder, setDltOrder, refetch }) => {
   const [toolData] = SetTool(tools_id);
   console.log(dltOrder);
   const deleteDoctor = (email) => {
-    fetch(`http://localhost:5000/orders/${email}`, {
+    fetch(`https://gentle-mesa-53568.herokuapp.com/orders/${email}`, {
       method: "DELETE",
       //   headers: {
       //     authorization: `Bearer ${localStorage.getItem("accessToken")}`,

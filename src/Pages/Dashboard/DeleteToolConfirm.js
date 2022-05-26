@@ -6,7 +6,7 @@ const DeleteToolConfirm = ({ refetch, setDltTool, dltTool }) => {
   const { _id, name } = dltTool;
 
   const deleteTool = (id) => {
-    fetch(`http://localhost:5000/tools/${id}`, {
+    fetch(`https://gentle-mesa-53568.herokuapp.com/tools/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

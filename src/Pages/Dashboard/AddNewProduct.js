@@ -41,7 +41,7 @@ const AddNewProduct = () => {
             img: img,
           };
           console.log(addTool);
-          fetch(`http://localhost:5000/tools`, {
+          fetch(`https://gentle-mesa-53568.herokuapp.com/tools`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

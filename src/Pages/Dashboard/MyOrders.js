@@ -18,12 +18,15 @@ const MyOrders = () => {
     isLoading,
     refetch,
   } = useQuery("orders", () =>
-    fetch(`http://localhost:5000/orders?email=${user.email}`, {
-      method: "Get",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    }).then((res) => {
+    fetch(
+      `https://gentle-mesa-53568.herokuapp.com/orders?email=${user.email}`,
+      {
+        method: "Get",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    ).then((res) => {
       console.log(res);
       if (res.status === 401 || res.status === 403) {
         navigate("/");

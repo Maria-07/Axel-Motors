@@ -24,6 +24,11 @@ const Navbar = () => {
           Home
         </CustomLink>
       </li>
+      <li>
+        <CustomLink className="text-lg " to={"/blog"}>
+          Blog
+        </CustomLink>
+      </li>
       {user && (
         <li>
           <CustomLink className="text-lg" to={"dashboard"}>

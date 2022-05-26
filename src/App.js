@@ -22,6 +22,7 @@ import AddNewProduct from "./Pages/Dashboard/AddNewProduct";
 import ManageAllOrders from "./Pages/Dashboard/ManageAllOrders";
 import RequiredAdmin from "./Pages/Shared/RequiredAdmin";
 import Payment from "./Pages/Dashboard/Payment";
+import Blog from "./Pages/Blog/Blog";
 
 function App() {
   return (
@@ -78,6 +79,7 @@ function App() {
             </Required>
           }
         ></Route>
+        <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signUp" element={<SignUp></SignUp>}></Route>
         <Route path="/*" element={<NotFOundPage></NotFOundPage>}></Route>

@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 const UseTools = () => {
   const [tools, setTools] = useState([]);
   useEffect(() => {
-    axios("http://localhost:5000/tools").then((data) => setTools(data.data));
+    axios("https://gentle-mesa-53568.herokuapp.com/tools").then((data) =>
+      setTools(data.data)
+    );
   }, []);
 
   return [tools, setTools];
