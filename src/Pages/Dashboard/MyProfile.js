@@ -98,7 +98,7 @@ const MyProfile = () => {
 
         <select
           {...register("education")}
-          class="select select-bordered w-full max-w-xs mb-4"
+          className="select select-bordered w-full max-w-xs mb-4"
         >
           <option disabled selected>
             BSC
@@ -131,7 +131,7 @@ const MyProfile = () => {
 
         <select
           {...register("district")}
-          class="select select-bordered w-full max-w-xs mb-4"
+          className="select select-bordered w-full max-w-xs mb-4"
         >
           <option disabled selected>
             Dhaka

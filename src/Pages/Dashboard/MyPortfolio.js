@@ -22,8 +22,8 @@ const MyPortfolio = () => {
       <div className="divider"></div>
 
       <div className="flex flex-wrap">
-        <div class="avatar">
-          <div class="sm:ml-10 w-32 rounded-full">
+        <div className="avatar">
+          <div className="sm:ml-10 w-32 rounded-full">
             <img src={profile} alt="" />
           </div>
         </div>
@@ -40,7 +40,7 @@ const MyPortfolio = () => {
           <p className=" text-lg font-light ">shanjida.rahman003@gmail.com</p>
         </div>
       </div>
-      <div class="divider text-xl font-medium">About Me</div>
+      <div className="divider text-xl font-medium">About Me</div>
       <div className=" sm:mx-10 sm:w-3/4 my-10">
         <h1 className=" text-xl font-medium">My Intro,</h1>
         <h1 className="text-3xl mt-2 font-medium">About Me</h1>

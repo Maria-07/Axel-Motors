@@ -66,46 +66,46 @@ const AddReview = () => {
   return (
     <div>
       <div className="">
-        <div class="rating rating-md my-3">
+        <div className="rating rating-md my-3">
           <input
             type="radio"
             name="rating-7"
-            class="mask mask-star-2 bg-yellow-300"
+            className="mask mask-star-2 bg-yellow-300"
           />
           <input
             type="radio"
             name="rating-7"
-            class="mask mask-star-2 bg-yellow-300"
+            className="mask mask-star-2 bg-yellow-300"
             checked
           />
           <input
             type="radio"
             name="rating-7"
-            class="mask mask-star-2 bg-yellow-300"
+            className="mask mask-star-2 bg-yellow-300"
           />
           <input
             type="radio"
             name="rating-7"
-            class="mask mask-star-2 bg-yellow-300"
+            className="mask mask-star-2 bg-yellow-300"
           />
           <input
             type="radio"
             name="rating-7"
-            class="mask mask-star-2 bg-yellow-500"
+            className="mask mask-star-2 bg-yellow-500"
           />
         </div>
         <div className=" my-5 w-1/4">
-          <div class="w-1/4 bg-gray-200 h-2 mb-3">
-            <div class="bg-green-500 h-2 rounded-md"></div>
+          <div className="w-1/4 bg-gray-200 h-2 mb-3">
+            <div className="bg-green-500 h-2 rounded-md"></div>
           </div>
-          <div class="w-1/2 bg-gray-200 h-2 mb-3">
-            <div class="bg-blue-400 h-2 rounded-md"></div>
+          <div className="w-1/2 bg-gray-200 h-2 mb-3">
+            <div className="bg-blue-400 h-2 rounded-md"></div>
           </div>
-          <div class="w-3/4 bg-gray-200 h-2 mb-3">
-            <div class="bg-yellow-500 h-2 rounded-md"></div>
+          <div className="w-3/4 bg-gray-200 h-2 mb-3">
+            <div className="bg-yellow-500 h-2 rounded-md"></div>
           </div>
-          <div class="w-full bg-gray-200 h-2">
-            <div class="bg-red-500 h-2 rounded-md"></div>
+          <div className="w-full bg-gray-200 h-2">
+            <div className="bg-red-500 h-2 rounded-md"></div>
           </div>
         </div>
       </div>
@@ -120,7 +120,7 @@ const AddReview = () => {
 
           <select
             {...register("rating")}
-            class="select select-bordered w-full max-w-xs mb-4"
+            className="select select-bordered w-full max-w-xs mb-4"
           >
             <option disabled selected>
               5
@@ -132,14 +132,14 @@ const AddReview = () => {
           </select>
 
           {/* review comment  */}
-          <div class="form-control">
+          <div className="form-control">
             <label className="label">
               <span className="label-text font-medium my-1">
                 Add your review
               </span>
             </label>
             <textarea
-              class="textarea textarea-bordered h-24 w-full max-w-xs"
+              className="textarea textarea-bordered h-24 w-full max-w-xs"
               placeholder="Review"
               {...register("review", {
                 required: {

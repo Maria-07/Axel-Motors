@@ -68,7 +68,7 @@ const Navbar = () => {
               </ul>
             </div>
             <Link to={"/"}>
-              <img src={logo} className="lg:h-10" alt="" />
+              <img src={logo} className="sm:h-10" alt="" />
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex text-accent ">

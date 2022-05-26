@@ -26,21 +26,28 @@ const DeleteToolConfirm = ({ refetch, setDltTool, dltTool }) => {
     <div>
       <div>
         {/* <!-- Put this part before </body> tag --> */}
-        <input type="checkbox" id="delete-confirm-modal" class="modal-toggle" />
-        <div class="modal modal-bottom sm:modal-middle">
-          <div class="modal-box">
-            <h3 class="font-medium text-lg text-primary pb-10">
+        <input
+          type="checkbox"
+          id="delete-confirm-modal"
+          className="modal-toggle"
+        />
+        <div className="modal modal-bottom sm:modal-middle">
+          <div className="modal-box">
+            <h3 className="font-medium text-lg text-primary pb-10">
               Are you sure you want to delete {name} ?
             </h3>
 
-            <div class="modal-action">
+            <div className="modal-action">
               <button
                 onClick={() => deleteTool(_id)}
-                class="btn btn-outline btn-danger"
+                className="btn btn-outline btn-danger"
               >
                 DELETE
               </button>
-              <label for="delete-confirm-modal" class=" btn button  btn-danger">
+              <label
+                for="delete-confirm-modal"
+                className=" btn button  btn-danger"
+              >
                 Cancel
               </label>
             </div>

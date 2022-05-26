@@ -10,11 +10,14 @@ const Dashboard = () => {
   const [admin] = UseAdmin(user);
   return (
     <div>
-      <div class="drawer drawer-mobile">
-        <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+      <div className="drawer drawer-mobile">
+        <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 
-        <div class="drawer-content p-10 ">
-          <label for="my-drawer-2" class="btn  button drawer-button lg:hidden">
+        <div className="drawer-content p-10 ">
+          <label
+            for="my-drawer-2"
+            className="btn  button drawer-button lg:hidden"
+          >
             Open drawer
           </label>
 
@@ -25,9 +28,9 @@ const Dashboard = () => {
           <Outlet></Outlet>
         </div>
 
-        <div class="drawer-side sm:my-10">
-          <label for="my-drawer-2" class="drawer-overlay"></label>
-          <ul class="menu p-10 overflow-y-auto w-80 border-2  shadow-md bg-neutral text-base-content">
+        <div className="drawer-side sm:my-10">
+          <label for="my-drawer-2" className="drawer-overlay"></label>
+          <ul className="menu p-10 overflow-y-auto w-80 border-2  shadow-md bg-neutral text-base-content">
             {/* <!-- Sidebar content here --> */}
             {!admin && (
               <>

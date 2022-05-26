@@ -39,12 +39,12 @@ const MyOrder = ({ order, setDltOrder }) => {
 
   return (
     <div className="my-5">
-      <div class="card flex flex-wrap justify-center items-center p-3 card-side bg-base-100 shadow-xl">
+      <div className="card flex flex-wrap justify-center items-center p-3 card-side bg-base-100 shadow-xl">
         <figure>
           <img src={img} className=" h-72" alt="Movie" />
         </figure>
-        <div class="card-body">
-          <h2 class="card-title">{name}</h2>
+        <div className="card-body">
+          <h2 className="card-title">{name}</h2>
           <p className="text-sm  font-medium">
             Price : <span className=" text-xl text-primary">{price}</span>
             <span className=" text-xs">/unit</span>
@@ -76,22 +76,22 @@ const MyOrder = ({ order, setDltOrder }) => {
             )}
           </p>
 
-          <div class="card-actions justify-end">
+          <div className="card-actions justify-end">
             {!toolData.paid ? (
               <>
                 <label
                   onClick={() => setDltOrder(order)}
                   for="delete-confirm-modal"
-                  class="btn btn-outline btn-danger"
+                  className="btn btn-outline btn-danger"
                 >
                   DELETE
                 </label>
                 <Link to={`/dashboard/payment/${tools_id}`}>
-                  <button class="btn btn-primary">PAY NOW</button>
+                  <button className="btn btn-primary">PAY NOW</button>
                 </Link>
               </>
             ) : (
-              <span class=" bg-secondary text-neutral button">Paid</span>
+              <span className=" bg-secondary text-neutral button">Paid</span>
             )}
           </div>
         </div>

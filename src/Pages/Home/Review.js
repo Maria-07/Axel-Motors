@@ -7,15 +7,15 @@ const Review = ({ reviews }) => {
   const { img, name, rating, review } = reviews;
   return (
     <div className="mx-auto tool">
-      <div class="card h-72 w-96 bg-base-100 shadow-xl">
-        <div class="card-body">
+      <div className="card h-72 w-96 bg-base-100 shadow-xl">
+        <div className="card-body">
           <div className="flex">
-            <div class="avatar">
-              <div class="w-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+            <div className="avatar">
+              <div className="w-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                 <img src={img} alt="" />
               </div>
             </div>
-            <div class="divider  divider-horizontal"></div>
+            <div className="divider  divider-horizontal"></div>
 
             <div>
               <p className="font-medium mb-2 text-lg">{name}</p>

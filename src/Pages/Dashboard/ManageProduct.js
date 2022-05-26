@@ -39,7 +39,7 @@ const ManageProduct = ({ tool, setDltTool }) => {
             <label
               onClick={() => setDltTool(tool)}
               for="delete-confirm-modal"
-              class="btn btn-outline btn-danger Signup-button font-medium"
+              className="btn btn-outline btn-danger Signup-button font-medium"
             >
               DELETE
             </label>

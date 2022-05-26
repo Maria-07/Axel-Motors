@@ -19,17 +19,17 @@ const Payment = () => {
   const { name, price } = toolData;
   return (
     <div>
-      <div class="card max-w-md  bg-base-100 shadow-xl my-10">
-        <div class="card-body">
+      <div className="card max-w-md  bg-base-100 shadow-xl my-10">
+        <div className="card-body">
           <p className="text-2xl font-medium text-secondary">
             Hello {user.displayName},
           </p>
-          <span class="card-title font-medium">Please Pay for {name}</span>{" "}
+          <span className="card-title font-medium">Please Pay for {name}</span>{" "}
           <p className=" text-3xl font-medium my-3">Price : ${price}</p>
         </div>
       </div>
-      <div class="card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100">
-        <div class="card-body">
+      <div className="card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100">
+        <div className="card-body">
           <Elements stripe={stripePromise}>
             <CheckoutForm toolData={toolData}></CheckoutForm>
           </Elements>

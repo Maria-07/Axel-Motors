@@ -93,14 +93,14 @@ const AddNewProduct = () => {
           </label>
 
           {/* Add description  */}
-          <div class="form-control">
+          <div className="form-control">
             <label className="label">
               <span className="label-text font-medium my-1">
                 Add Description
               </span>
             </label>
             <textarea
-              class="textarea textarea-bordered h-24 w-full max-w-xs"
+              className="textarea textarea-bordered h-24 w-full max-w-xs"
               placeholder="Description"
               {...register("description", {
                 required: {

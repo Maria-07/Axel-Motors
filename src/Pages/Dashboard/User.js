@@ -53,7 +53,7 @@ const User = ({ user, index, refetch }) => {
       <td>{email}</td>
       <td>
         {role !== "admin" && (
-          <button class="btn button btn-sm" onClick={makeAdmin}>
+          <button className="btn button btn-sm" onClick={makeAdmin}>
             Make Admin
           </button>
         )}
