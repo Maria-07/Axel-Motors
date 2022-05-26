@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# AXEL MOTORS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+live link of [AXEL-MOTORS](https://alex-motors.web.app/).
 
 ## Available Scripts
 
