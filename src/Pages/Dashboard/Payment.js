@@ -6,6 +6,7 @@ import SetTool from "../../Hooks/SetTool";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "./CheckoutForm";
 import { Elements } from "@stripe/react-stripe-js";
+import SetOrder from "../../Hooks/SetOrder";
 
 const stripePromise = loadStripe(
   "pk_test_51L1mirGgJu6WrRXy6i6PnlHUHSDM2UXVDROmpvICytExaoJzR1tnsozr4ivdZUORHh3nf00ttjeDHsmXnsmTGezZ00c4cFlvtM"
@@ -13,10 +14,10 @@ const stripePromise = loadStripe(
 
 const Payment = () => {
   const { id } = useParams();
-  const [toolData] = SetTool(id);
+  const [orderData] = SetOrder(id);
   const [user] = useAuthState(auth);
 
-  const { name, price } = toolData;
+  const { name, price } = orderData;
   return (
     <div>
       <div className="card max-w-md  bg-base-100 shadow-xl my-10">
@@ -31,7 +32,7 @@ const Payment = () => {
       <div className="card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100">
         <div className="card-body">
           <Elements stripe={stripePromise}>
-            <CheckoutForm toolData={toolData}></CheckoutForm>
+            <CheckoutForm orderData={orderData}></CheckoutForm>
           </Elements>
         </div>
       </div>

@@ -38,7 +38,7 @@ const ManageProduct = ({ tool, setDltTool }) => {
           <div className="card-actions justify-start">
             <label
               onClick={() => setDltTool(tool)}
-              for="delete-confirm-modal"
+              htmlFor="delete-confirm-modal"
               className="btn btn-outline btn-danger Signup-button font-medium"
             >
               DELETE

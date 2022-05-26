@@ -69,7 +69,7 @@ const MyOrder = ({ order, setDltOrder }) => {
             <br />
             Contact : <span className=" text-accent text-normal">{phone} </span>
             <br />
-            {toolData.paid && (
+            {order.paid && (
               <p className="text-green-500">
                 Transaction ID : {transaction.transactionId}
               </p>
@@ -77,16 +77,16 @@ const MyOrder = ({ order, setDltOrder }) => {
           </p>
 
           <div className="card-actions justify-end">
-            {!toolData.paid ? (
+            {!order.paid ? (
               <>
                 <label
                   onClick={() => setDltOrder(order)}
-                  for="delete-confirm-modal"
+                  htmlFor="delete-confirm-modal"
                   className="btn btn-outline btn-danger"
                 >
                   DELETE
                 </label>
-                <Link to={`/dashboard/payment/${tools_id}`}>
+                <Link to={`/dashboard/payment/${order._id}`}>
                   <button className="btn btn-primary">PAY NOW</button>
                 </Link>
               </>

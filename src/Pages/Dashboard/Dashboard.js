@@ -15,7 +15,7 @@ const Dashboard = () => {
 
         <div className="drawer-content p-10 ">
           <label
-            for="my-drawer-2"
+            htmlFor="my-drawer-2"
             className="btn  button drawer-button lg:hidden"
           >
             Open drawer
@@ -29,7 +29,7 @@ const Dashboard = () => {
         </div>
 
         <div className="drawer-side sm:my-10">
-          <label for="my-drawer-2" className="drawer-overlay"></label>
+          <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-10 overflow-y-auto w-80 border-2  shadow-md bg-neutral text-base-content">
             {/* <!-- Sidebar content here --> */}
             {!admin && (

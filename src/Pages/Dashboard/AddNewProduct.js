@@ -52,7 +52,7 @@ const AddNewProduct = () => {
             .then((response) => response.json())
             .then((data) => {
               if (data.insertedId) {
-                toast.dark(`Hey 👋, Thanks for your Review`);
+                toast.dark(`Hey 👋, A New Tool is added`);
               }
               console.log("Success:", data);
             });

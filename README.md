@@ -22,3 +22,13 @@ In the project directory, you can run:
     - react-toastify
     - react-spinner-animated
     - react-stripe-js
+
+### `Used Feature for Server`
+
+    - "cors"
+    - "dotenv"
+    - "express"
+    - "jsonwebtoken"
+    - "mongodb"
+    - "stripe"
+    - "heroku"

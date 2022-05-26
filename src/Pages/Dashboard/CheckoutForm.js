@@ -3,9 +3,9 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import auth from "../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-const CheckoutForm = ({ toolData }) => {
+const CheckoutForm = ({ orderData }) => {
   const [user] = useAuthState(auth);
-  const { price, _id } = toolData;
+  const { price, _id } = orderData;
   console.log(price);
   const stripe = useStripe();
   const elements = useElements();

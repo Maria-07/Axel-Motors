@@ -4,13 +4,11 @@ import { toast } from "react-toastify";
 const DeleteToolConfirm = ({ refetch, setDltTool, dltTool }) => {
   console.log(dltTool);
   const { _id, name } = dltTool;
+  console.log(_id);
 
   const deleteTool = (id) => {
     fetch(`https://gentle-mesa-53568.herokuapp.com/tools/${id}`, {
       method: "DELETE",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
     })
       .then((res) => res.json())
       .then((data) => {
