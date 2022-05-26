@@ -2,7 +2,6 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import auth from "../../firebase.init";
-import SetTool from "../../Hooks/SetTool";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "./CheckoutForm";
 import { Elements } from "@stripe/react-stripe-js";

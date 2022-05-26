@@ -12,11 +12,7 @@ const MyOrder = ({ order, setDltOrder }) => {
   const [toolData] = SetTool(tools_id);
   const { name, img, price, availableQuantity } = toolData;
 
-  const {
-    data: transaction,
-    isLoading,
-    refetch,
-  } = useQuery("transaction", () =>
+  const { data: transaction, isLoading } = useQuery("transaction", () =>
     fetch(`https://gentle-mesa-53568.herokuapp.com/payment/${tools_id}`, {
       method: "Get",
       headers: {
