@@ -12,7 +12,7 @@ const ManageAllOrder = ({ order }) => {
   const { name, img, price, availableQuantity } = toolData;
 
   const { data: transaction, isLoading } = useQuery("transaction", () =>
-    fetch(`https://gentle-mesa-53568.herokuapp.com/payment/${tools_id}`, {
+    fetch(`localhost:5000/payment/${tools_id}`, {
       method: "Get",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

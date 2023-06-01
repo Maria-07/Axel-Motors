@@ -6,9 +6,10 @@ const UseTools = (order = 1) => {
   // console.log(order);
   useEffect(() => {
     console.log(order);
-    axios(`https://gentle-mesa-53568.herokuapp.com/tools?order=${order}`).then(
-      (data) => setTools(data.data)
-    );
+    axios("data/axel-motors.tools.json").then((data) => {
+      console.log(data);
+      setTools(data.data);
+    });
   }, [order]);
 
   return [tools, setTools];

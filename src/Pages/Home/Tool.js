@@ -50,7 +50,7 @@ const Tool = ({ tool }) => {
           </div>
           <div className="card-actions justify-start">
             <button className="Signup-button font-medium">
-              <Link to={`purchase/${_id}`}>Purchase</Link>
+              <Link to={`purchase/${_id.$oid}`}>Purchase</Link>
             </button>
           </div>
         </div>

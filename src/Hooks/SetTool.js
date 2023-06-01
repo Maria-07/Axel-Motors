@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const SetTool = (id) => {
   const [toolData, setToolData] = useState([]);
   useEffect(() => {
-    fetch(`https://gentle-mesa-53568.herokuapp.com/tools/${id}`, {
+    fetch(`localhost:5000/tools/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

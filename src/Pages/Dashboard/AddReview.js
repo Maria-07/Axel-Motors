@@ -43,7 +43,7 @@ const AddReview = () => {
             img: img,
           };
           console.log(addReview);
-          fetch(`https://gentle-mesa-53568.herokuapp.com/review`, {
+          fetch(`localhost:5000/review`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

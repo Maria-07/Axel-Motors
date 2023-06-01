@@ -10,7 +10,7 @@ const ManageAllOrders = () => {
   const navigate = useNavigate();
 
   const { data: orders, isLoading } = useQuery("orders", () =>
-    fetch(`https://gentle-mesa-53568.herokuapp.com/allOrders`, {
+    fetch(`localhost:5000/allOrders`, {
       method: "Get",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

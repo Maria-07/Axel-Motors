@@ -18,7 +18,7 @@ const CheckoutForm = ({ orderData }) => {
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
     if (price) {
-      fetch("https://gentle-mesa-53568.herokuapp.com/create-payment-intent", {
+      fetch("localhost:5000/create-payment-intent", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -82,7 +82,7 @@ const CheckoutForm = ({ orderData }) => {
         tool: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(`https://gentle-mesa-53568.herokuapp.com/tools/${_id}`, {
+      fetch(`localhost:5000/tools/${_id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

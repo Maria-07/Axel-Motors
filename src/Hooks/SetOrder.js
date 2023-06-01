@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const SetOrder = (id) => {
   const [orderData, setOrderData] = useState([]);
   useEffect(() => {
-    fetch(`https://gentle-mesa-53568.herokuapp.com/orders/${id}`, {
+    fetch(`localhost:5000/orders/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

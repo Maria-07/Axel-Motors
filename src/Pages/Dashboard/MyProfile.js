@@ -27,16 +27,13 @@ const MyProfile = () => {
     };
     console.log(users);
 
-    fetch(
-      `https://gentle-mesa-53568.herokuapp.com/users/myProfile?email=${user.email}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(users),
-      }
-    )
+    fetch(`localhost:5000/users/myProfile?email=${user.email}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(users),
+    })
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

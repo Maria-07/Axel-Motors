@@ -5,7 +5,7 @@ import Review from "./Review";
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    axios("https://gentle-mesa-53568.herokuapp.com/review").then((data) =>
+    axios("data/axel-motors.reviews.json").then((data) =>
       setReviews(data.data)
     );
   }, []);
